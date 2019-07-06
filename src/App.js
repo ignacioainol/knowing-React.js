@@ -17,13 +17,17 @@ class Helloworld extends React.Component{
     show: true
   }
 
+  toggleShow(){
+    this.setState({ show: false });
+   }
+
   render(){
     if(this.state.show){
       return (
         <div id="hello">
         <h3>{this.props.subtitle}</h3>
         { this.props.mytext }
-        <button>Toggle show</button>
+        <button onClick={ this.toggleShow.bind(this) }>Toggle show</button>
         </div>
       )
     }else{
